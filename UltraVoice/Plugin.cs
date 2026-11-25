@@ -147,7 +147,7 @@ namespace UltraVoice
             if (string.IsNullOrEmpty(voiceName))
                 return true;
 
-            if (voiceName.StartsWith("Ender") || voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
+            if (voiceName.StartsWith("EnderGear") || voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
                 voiceName = "Swordsmachine";
 
             /*if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //EL IF ORIGINAL
@@ -168,7 +168,7 @@ namespace UltraVoice
 
         public enum SwordsmachineVoiceActor
         {
-            Ender,
+            EnderGear,
             Mel,
             Noto,
             Soil
@@ -375,7 +375,7 @@ namespace UltraVoice
             if (string.IsNullOrEmpty(voiceName))
                 return master;
                 
-            if (voiceName.StartsWith("Ender") || voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
+            if (voiceName.StartsWith("EnderGear") || voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
                 voiceName = "Swordsmachine";
 
             //if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra"))
