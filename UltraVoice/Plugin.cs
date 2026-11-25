@@ -50,9 +50,9 @@ namespace UltraVoice
 
         public static VoiceConfig ConfigModule;
 
-        //public static BoolField CerberusVoiceEnabled;
+        public static BoolField CerberusVoiceEnabled;
         public static BoolField SwordsmachineVoiceEnabled;
-        /*public static BoolField V2VoiceEnabled;
+        public static BoolField V2VoiceEnabled;
         public static BoolField StreetcleanerVoiceEnabled;
         public static BoolField MindflayerVoiceEnabled;
         public static BoolField VirtueVoiceEnabled;
@@ -81,13 +81,13 @@ namespace UltraVoice
         public static BoolField PowerAltVoiceEnabled;
         public static BoolField DeathcatcherVoiceEnabled;
         public static BoolField MasterVoiceEnabled;
-        public static BoolField SubtitleColorsEnabled;*/
+        public static BoolField SubtitleColorsEnabled;
         
         public static FloatSliderField VoiceCooldown;
         public static IntField SubtitleLimit;
 
         public static EnumField<SwordsmachineVoiceActor> SwordsmachineVoiceActorField;
-        /*public static EnumField<SentryVoiceActor> SentryVoiceActorField;
+        public static EnumField<SentryVoiceActor> SentryVoiceActorField;
         public static EnumField<GuttertankVoiceActor> GuttertankVoiceActorField;
         public static EnumField<GuttermanVoiceActor> GuttermanVoiceActorField;
         public static EnumField<CerberusVoiceActor> CerberusVoiceActorField;
@@ -98,7 +98,7 @@ namespace UltraVoice
         public static EnumField<ShopTerminalVoiceActor> ShopTerminalVoiceActorField;
         public static EnumField<GeryonVoiceActor> GeryonVoiceActorField;
         public static EnumField<EarthmoverVoiceActor> EarthmoverVoiceActorField;
-        public static EnumField<PowerVoiceActor> PowerVoiceActorField;*/
+        public static EnumField<PowerVoiceActor> PowerVoiceActorField;
         
         /*public static ConfigPanel PowerVoicePoolPanel;
         public static Dictionary<string, BoolField> PowerVoiceToggles = new Dictionary<string, BoolField>();
@@ -147,7 +147,7 @@ namespace UltraVoice
             if (string.IsNullOrEmpty(voiceName))
                 return true;
 
-            if (voiceName.StartsWith("Ender")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
+            if (voiceName.StartsWith("Ender") || voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
                 voiceName = "Swordsmachine";
 
             /*if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //EL IF ORIGINAL
