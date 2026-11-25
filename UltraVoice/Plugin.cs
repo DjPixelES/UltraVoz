@@ -1,4 +1,5 @@
 ﻿/*
+    LICENCIA ORIGINAL / ORIGINAL LICENSE
     UltraVoice Retaken - Adds custom voice lines to ULTRAKILL enemies
     Copyright (C) 2026 msachelia, mel (mof_33)
 
@@ -17,6 +18,28 @@
 
     The voice recordings distributed with this program are licensed
     separately under VOICE_ACTING_LICENSE.md and are not covered by the GPL.
+    
+    NUEVAS LICENCIAS / NEW LICENSES
+    UltraVoz - Fork de UltraVoice Retaken tras el lanzamiento libre de su código
+    fuente. Añade líneas de voz para los enemigos de ULTRAKILL y más.
+    
+    Este programa es software libre. Puedes redistribuirlo y/o modifcarlo
+    bajo los términos de la GNU General Public License tal y cómo lo indica
+    la Free Software Foundation, sea la versión 3 de la Licencia o, (bajo
+    tu propia decisión) cualquier versión posterior.
+    
+    Este programa se distribuye con la intención de ser útil, pero SIN
+    NINGUNA GARANTÍA; incluso si se insinúa una garantía de MERCANTIBILIDAD
+    o ADAPTACIÓN A UN PROPÓSITO ESPECÍFICO. Lee la GNU General Public
+    License para obtener más detalles.
+    
+    Una copia de la GNU General Public License debe haber venido incluida
+    con este programa. Si este no es el caso, lee: 
+    <https://www.gnu.org/licenses/>.
+
+    Las grabaciones de voz distribuidas en este programa están
+    sujetas a la licencia 'LICENCIA_DE_ACTUACIÓN_DE_VOZ.md' y
+    no a la GPL.
 */
 
 using BepInEx;
@@ -40,8 +63,8 @@ namespace UltraVoice
     [BepInDependency("com.github.end-4.notiffy")]
     public class UltraVoicePlugin : BaseUnityPlugin
     {
-        public const string PluginGuid = "com.achelia.ultravoiceretaken";
-        public const string PluginName = "UltraVoice Retaken";
+        public const string PluginGuid = "com.UltraEspTeam.UltraVoz";
+        public const string PluginName = "UltraVoz";
         public const string PluginVersion = "2.0.0";
 
         public static UltraVoicePlugin Instance;
@@ -276,7 +299,7 @@ namespace UltraVoice
 
             StartCoroutine(UpdateChecker.CheckForUpdates(Logger));
 
-            Logger.LogInfo("UltraVoice Retaken loaded successfully!");
+            Logger.LogInfo("UltraVoz ha cargado con éxito. / UltraVoz loaded successfully!");
         }
 
         void OnDestroy()
