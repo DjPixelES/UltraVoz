@@ -50,9 +50,9 @@ namespace UltraVoice
 
         public static VoiceConfig ConfigModule;
 
-        public static BoolField CerberusVoiceEnabled;
+        //public static BoolField CerberusVoiceEnabled;
         public static BoolField SwordsmachineVoiceEnabled;
-        public static BoolField V2VoiceEnabled;
+        /*public static BoolField V2VoiceEnabled;
         public static BoolField StreetcleanerVoiceEnabled;
         public static BoolField MindflayerVoiceEnabled;
         public static BoolField VirtueVoiceEnabled;
@@ -81,12 +81,13 @@ namespace UltraVoice
         public static BoolField PowerAltVoiceEnabled;
         public static BoolField DeathcatcherVoiceEnabled;
         public static BoolField MasterVoiceEnabled;
-        public static BoolField SubtitleColorsEnabled;
+        public static BoolField SubtitleColorsEnabled;*/
+        
         public static FloatSliderField VoiceCooldown;
         public static IntField SubtitleLimit;
 
         public static EnumField<SwordsmachineVoiceActor> SwordsmachineVoiceActorField;
-        public static EnumField<SentryVoiceActor> SentryVoiceActorField;
+        /*public static EnumField<SentryVoiceActor> SentryVoiceActorField;
         public static EnumField<GuttertankVoiceActor> GuttertankVoiceActorField;
         public static EnumField<GuttermanVoiceActor> GuttermanVoiceActorField;
         public static EnumField<CerberusVoiceActor> CerberusVoiceActorField;
@@ -97,8 +98,9 @@ namespace UltraVoice
         public static EnumField<ShopTerminalVoiceActor> ShopTerminalVoiceActorField;
         public static EnumField<GeryonVoiceActor> GeryonVoiceActorField;
         public static EnumField<EarthmoverVoiceActor> EarthmoverVoiceActorField;
-        public static EnumField<PowerVoiceActor> PowerVoiceActorField;
-        public static ConfigPanel PowerVoicePoolPanel;
+        public static EnumField<PowerVoiceActor> PowerVoiceActorField;*/
+        
+        /*public static ConfigPanel PowerVoicePoolPanel;
         public static Dictionary<string, BoolField> PowerVoiceToggles = new Dictionary<string, BoolField>();
 
         public static readonly string[] PowerVoiceOrder = { "Cazsu", "Goober", "NotoMasc", "Vanilla", "Mel", "NotoFem" };
@@ -111,8 +113,9 @@ namespace UltraVoice
             { "Vanilla", "Kennady (Fem)" },
             { "Mel", "Mel (Fem)" },
             { "NotoFem", "Noto (Fem)" }
-        };
-        public static EnumField<V1VoiceActor> V1VoiceActorField;
+        };*/
+        
+        /*public static EnumField<V1VoiceActor> V1VoiceActorField;
         public static EnumField<V2VoiceActor> V2VoiceActorField;
         public static ConfigPanel TogglesPanel;
         public static ConfigPanel EnemyTogglesPanel;
@@ -132,7 +135,7 @@ namespace UltraVoice
                 return false;
 
             return !V1LineToggles.TryGetValue(key, out BoolField field) || field.value;
-        }
+        }*/
 
         public static bool VoicesEnabled => MasterVoiceEnabled == null || MasterVoiceEnabled.value;
 
@@ -144,8 +147,11 @@ namespace UltraVoice
             if (string.IsNullOrEmpty(voiceName))
                 return true;
 
-            if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra"))
+            if (voiceName.StartsWith("Ender")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
                 voiceName = "Swordsmachine";
+
+            /*if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //EL IF ORIGINAL
+                voiceName = "Swordsmachine";*/
 
             foreach (var pair in SubtitleColorToggles)
             {
@@ -162,9 +168,10 @@ namespace UltraVoice
 
         public enum SwordsmachineVoiceActor
         {
-            Mel,
-            Noto,
-            Soil
+            Ender
+            //Mel,
+            //Noto,
+            //Soil
         }
 
         public enum SentryVoiceActor
@@ -296,7 +303,7 @@ namespace UltraVoice
             SwordsmachineCharacter.FirstFightDone = false;
             SwordsmachineCharacter.FirstFightLinePlayed = false;
 
-            V2Character.V2IntroTime = -999f;
+            /*V2Character.V2IntroTime = -999f;
             V2Character.V2CutsceneVoicePlayed = false;
             V2Character.V2SecondVoiceRestartPlayed = false;
             V2Character.V2DeathPlayed = false;
@@ -324,12 +331,12 @@ namespace UltraVoice
             GeryonCharacter.CanRestartFight = false;
 
             PowerCharacter.RollVoice();
-            PowerCharacter.ResetIntroRolls();
+            PowerCharacter.ResetIntroRolls();*/
         }
 
         void LoadAssets()
         {
-            CerberusCharacter.LoadVoiceLines(Logger);
+            /*CerberusCharacter.LoadVoiceLines(Logger);
             DeathcatcherCharacter.LoadVoiceLines(Logger);
             EarthmoverCharacter.LoadVoiceLines(Logger);
             FerrymanCharacter.LoadVoiceLines(Logger);
@@ -354,11 +361,11 @@ namespace UltraVoice
             WickedCharacter.LoadVoiceLines(Logger);
             StalkerCharacter.LoadVoiceLines(Logger);
             StrayCharacter.LoadVoiceLines(Logger);
-            StreetcleanerCharacter.LoadVoiceLines(Logger);
+            StreetcleanerCharacter.LoadVoiceLines(Logger);*/
             SwordsmachineCharacter.LoadVoiceLines(Logger);
-            V1Character.LoadVoiceLines(Logger);
+            /*V1Character.LoadVoiceLines(Logger);
             V2Character.LoadVoiceLines(Logger);
-            VirtueCharacter.LoadVoiceLines(Logger);
+            VirtueCharacter.LoadVoiceLines(Logger);*/
         }
 
         public static float GetVoiceVolume(string voiceName)
@@ -367,9 +374,12 @@ namespace UltraVoice
 
             if (string.IsNullOrEmpty(voiceName))
                 return master;
-
-            if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra"))
+                
+            if (voiceName.StartsWith("Ender")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
                 voiceName = "Swordsmachine";
+
+            //if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra"))
+                //voiceName = "Swordsmachine";
 
             float character = 1f;
 
