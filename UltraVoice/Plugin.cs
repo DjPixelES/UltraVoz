@@ -375,7 +375,7 @@ namespace UltraVoice
             if (string.IsNullOrEmpty(voiceName))
                 return master;
                 
-            if (voiceName.StartsWith("Ender")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
+            if (voiceName.StartsWith("Ender") || voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
                 voiceName = "Swordsmachine";
 
             //if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra"))
