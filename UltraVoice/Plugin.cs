@@ -168,10 +168,10 @@ namespace UltraVoice
 
         public enum SwordsmachineVoiceActor
         {
-            Ender
-            //Mel,
-            //Noto,
-            //Soil
+            Ender,
+            Mel,
+            Noto,
+            Soil
         }
 
         public enum SentryVoiceActor
