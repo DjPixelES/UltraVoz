@@ -180,8 +180,8 @@ namespace UltraVoice.Utilities
 
         void BuildVoiceActors() //PROCEDIMIENTO DE PRUEBA, COMENTAR SI NO SE USARÁ
         {
-            UltraVoicePlugin.SwordsmachineVoiceActorField = CreateActorSetting("smvoiceactor", "Swordsmachine", UltraVoicePlugin.SwordsmachineVoiceActor.Mel, actors,
-                (UltraVoicePlugin.SwordsmachineVoiceActor.Ender, "Ender"));
+            UltraVoicePlugin.SwordsmachineVoiceActorField = CreateActorSetting("smvoiceactor", "Swordsmachine", UltraVoicePlugin.SwordsmachineVoiceActor.EnderGear, actors,
+                (UltraVoicePlugin.SwordsmachineVoiceActor.EnderGear, "EnderGear"));
         }
         /*void BuildVoiceActors()// PROCEDIMIENTO ORIGINAL
         {
