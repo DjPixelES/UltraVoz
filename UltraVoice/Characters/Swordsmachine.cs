@@ -72,49 +72,49 @@ namespace UltraVoice.Characters
 
         public static readonly string[] EnrageSubs =
         {
-            "GRRR...",
-            "GRRR...",
-            "MOTHERFUCKER!",
-            "OHOHO, YOU ARE SO DEAD!"
+            "... YA VAS A VER.",
+            "... TE VOY A MATAR.",
+            "¡HIJO DE PUTA!",
+            "OJOJO, TE VAS A MORIR!"
         };
 
         public static readonly string[] EnrageSubs2 =
         {
-            "I'LL KICK YOUR ASS!",
-            "I'LL KILL YOU!",
+            null,
+            null,
             null,
             null
         };
 
         public static readonly string[] SpawnSubs =
         {
-            "LET'S SEE SOME BLOOD!",
-            "COME ON, COME ON!",
-            "WHO'S READY TO FIGHT!",
-            "I SMELL BLOOD!",
-            "I'LL CUT YOU ALL DOWN!",
-            "FRESH BLOOD!",
-            "MORE MEAT FOR THE SLAUGHTER!",
+            "¡A VER SI SANGRAN!",
+            "¡VAMOS, VAMOS!",
+            "¿QUIÉN QUIERE PELEAR?",
+            "¡AQUÍ HAY SANGRE!",
+            "¡LES VOY A CORTAR LAS JETAS!",
+            "¡¿NO VIERON MIS BOLAS?! Las perdí la semana pasada.",
+            "¡MÁS CARNE PA CORTAR!",
         };
 
         public static readonly string[] KnockdownSubs =
         {
-            "IS THAT ALL YOU GOT?",
-            "I AIN'T DONE WITH YOU YET!",
-            "I'M JUST GETTING STARTED!"
+            "UY, TE FALTA FUERZA.",
+            "¡MUY POCO AÚN!",
+            "¡ESTO NO ES NADA!"
         };
 
         public static readonly string[] RangedSubs =
         {
-            "CATCH THIS!",
-            "EAT THIS!",
+            "¡ATRAPA!",
+            "¡TRÁGATELA!",
         };
 
         public static readonly string[] SandedSubs =
         {
-            "TRY HEALIN' OFF ME NOW, DIPSHIT!",
-            "ENJOY THE DRY SPELL, BITCH!",
-            "AWWWW, SOMEONE FEELIN' THIRSTY!?"
+            "¡A VER SI AHORA TE PUEDES CURAR, PENDEJO!",
+            "¡AGUÁNTATE LA SEQUÍA, IDIOTA!",
+            "UYYY, ¡¿TENÍAS SED?!"
         };
 
 
@@ -249,7 +249,7 @@ namespace UltraVoice.Characters
             RangedClipsNoto = UltraVoicePlugin.LoadClips("Swordsmachine.Noto.sm_Ranged{0}.wav", 2);
             RangedClipsSoil = UltraVoicePlugin.LoadClips("Swordsmachine.Soil.sm_Ranged{0}.wav", 2);
 
-            logger.LogInfo("Swordsmachine voice lines loaded successfully!");
+            logger.LogInfo("Se han cargado las líneas del Espadachín. / Swordsmachine voice lines loaded successfully!");
         }
 
         public static void PlayRangedVoice(SwordsMachine sm)
@@ -296,7 +296,7 @@ namespace UltraVoice.Characters
                 else if (SceneHelper.CurrentScene == "Level 0-2")
                     VoiceManager.CreateVoiceSource(__instance, "Swordsmachine",
                     SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.SpawnClipSecret, SwordsmachineCharacter.SpawnClipSecretNoto, SwordsmachineCharacter.SpawnClipSecretSoil),
-                    "FINALLY CAUGHT UP WITH ME, HUH, PIPSQUEAK!?",
+                    "PARECE QUE YA ME ALCANZASTE, DEBILUCHO.",
                     true
                 );
             }
@@ -319,12 +319,12 @@ namespace UltraVoice.Characters
             if (!SwordsmachineCharacter.FirstFightDone)
             {
                 clip = SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.IntroClip, SwordsmachineCharacter.IntroClipNoto, SwordsmachineCharacter.IntroClipSoil);
-                subtitle = "YOU WANT A FIGHT? LET'S FIGHT!";
+                subtitle = "¿QUIERES PELEAR? ¡PUES PELEA!";
             }
             else
             {
                 clip = SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.IntroClipSecond, SwordsmachineCharacter.IntroClipSecondNoto, SwordsmachineCharacter.IntroClipSecondSoil);
-                subtitle = "DID YOU THINK I FORGOT ABOUT YOU?";
+                subtitle = "¿CREES QUE ME OLVIDÉ DE TI?";
             }
 
             var src = VoiceManager.CreateVoiceSource(sm, "SwordsmachineIntro", clip, subtitle, true);
@@ -352,7 +352,7 @@ namespace UltraVoice.Characters
                     __instance,
                     "AgonySpawn",
                     SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.AgonySpawnClip, SwordsmachineCharacter.AgonySpawnClipNoto, SwordsmachineCharacter.AgonySpawnClipSoil),
-                    "JUMP 'EM!",
+                    "¡A MATAAAAAR!",
                     true,
                     SwordsmachineCharacter.AgonyColor
                 );
@@ -361,7 +361,7 @@ namespace UltraVoice.Characters
                     __instance,
                     "TundraSpawn",
                     SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.TundraSpawnClip, SwordsmachineCharacter.TundraSpawnClipNoto, SwordsmachineCharacter.TundraSpawnClipSoil),
-                    "THERE THEY ARE!",
+                    "¡AHÍ ESTÁ!",
                     true,
                     SwordsmachineCharacter.TundraColor
                 );
@@ -488,7 +488,7 @@ namespace UltraVoice.Characters
                 yield break;
 
             VoiceManager.ShowSubtitle(
-                "YOU THINK YOU'RE SO MUCH BETTER THAN ME, HUH?!",
+                "... ¿TE CREES MEJOR QUE YO?",
                 src,
                 SwordsmachineCharacter.GetColorOverride(sm)
             );
@@ -504,7 +504,7 @@ namespace UltraVoice.Characters
                 sm,
                 "SwordsmachineKnockdown",
                 SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.KnockdownClipSpecialBrutal, SwordsmachineCharacter.KnockdownClipSpecialBrutalNoto, SwordsmachineCharacter.KnockdownClipSpecialBrutalSoil),
-                "PIECE OF SHIT!",
+                "¡CHATARRA DE MIERDA!",
                 true,
                 SwordsmachineCharacter.GetColorOverride(sm)
             );
@@ -546,7 +546,7 @@ namespace UltraVoice.Characters
                     sm,
                     "AgonyKnockdown",
                     SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.AgonyKnockdownClip, SwordsmachineCharacter.AgonyKnockdownClipNoto, SwordsmachineCharacter.AgonyKnockdownClipSoil),
-                    "DAMMIT!",
+                    "¡CARAJO!",
                     true,
                     SwordsmachineCharacter.AgonyColor
                 );
@@ -555,7 +555,7 @@ namespace UltraVoice.Characters
                     sm,
                     "TundraKnockdown",
                     SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.TundraKnockdownClip, SwordsmachineCharacter.TundraKnockdownClipNoto, SwordsmachineCharacter.TundraKnockdownClipSoil),
-                    "COVER ME!",
+                    "¡CÚBREME!",
                     true,
                     SwordsmachineCharacter.TundraColor
                 );
@@ -617,7 +617,7 @@ namespace UltraVoice.Characters
                 __instance,
                 "SwordsmachineCombo",
                 SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.ComboClip, SwordsmachineCharacter.ComboClipNoto, SwordsmachineCharacter.ComboClipSoil),
-                "DIE, DIE, DIE!",
+                "¡MUERE, MUERE, MUERE!",
                 subtitleColor: SwordsmachineCharacter.GetColorOverride(__instance),
                 randomPitch: true
             );
@@ -642,7 +642,7 @@ namespace UltraVoice.Characters
                 __instance,
                 "SwordsmachineLunge",
                 SwordsmachineCharacter.UseSwordsmachineClip(SwordsmachineCharacter.LungeClip, SwordsmachineCharacter.LungeClipNoto, SwordsmachineCharacter.LungeClipSoil),
-                "DIE!",
+                "¡ZAS!",
                 subtitleColor: SwordsmachineCharacter.GetColorOverride(__instance),
                 randomPitch: true
             );
