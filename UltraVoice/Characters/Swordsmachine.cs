@@ -188,7 +188,31 @@ namespace UltraVoice.Characters
 
         public static void LoadVoiceLines(BepInEx.Logging.ManualLogSource logger)
         {
-            IntroClip = UltraVoicePlugin.LoadClip("Swordsmachine.Mel.sm_SpawnSpecial.wav");
+            //LOS DE ENDER
+            IntroClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_SpawnSpecial.wav");
+            IntroClipSecond = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_SpawnSpecial2.wav");
+            BigPainClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_BigPain.wav");
+            LungeClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_Lunge.wav");
+            ComboClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_Combo.wav");
+            DeathClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_Death.wav");
+            KnockdownClipSpecial = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_KnockdownSpecial.wav");
+            KnockdownClipSpecialBrutal = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_PieceOfShit.wav");
+            
+            SpawnClipSecret = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_SpawnSpecialSecret.wav");
+            SandedClips = UltraVoicePlugin.LoadClips("Swordsmachine.EnderGear.sm_Sanded{0}.wav", 3);
+
+            AgonySpawnClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_SpawnSpecialAgony.wav");
+            TundraSpawnClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_SpawnSpecialTundra.wav");
+            AgonyKnockdownClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_DownedAgony.wav");
+            TundraKnockdownClip = UltraVoicePlugin.LoadClip("Swordsmachine.EnderGear.sm_DownedTundra.wav");
+
+            SpawnClips = UltraVoicePlugin.LoadClips("Swordsmachine.EnderGear.sm_Spawn{0}.wav", 7);
+            EnrageClips = UltraVoicePlugin.LoadClips("Swordsmachine.EnderGear.sm_Enrage{0}.wav", 4);
+            KnockdownClips = UltraVoicePlugin.LoadClips("Swordsmachine.EnderGear.sm_Knockdown{0}.wav", 3);
+            RangedClips = UltraVoicePlugin.LoadClips("Swordsmachine.EnderGear.sm_Ranged{0}.wav", 2);
+
+            //LOS ORIGINALES
+            /*IntroClip = UltraVoicePlugin.LoadClip("Swordsmachine.Mel.sm_SpawnSpecial.wav");
             IntroClipSecond = UltraVoicePlugin.LoadClip("Swordsmachine.Mel.sm_SpawnSpecial2.wav");
             BigPainClip = UltraVoicePlugin.LoadClip("Swordsmachine.Mel.sm_BigPain.wav");
             LungeClip = UltraVoicePlugin.LoadClip("Swordsmachine.Mel.sm_Lunge.wav");
@@ -208,7 +232,7 @@ namespace UltraVoice.Characters
             SpawnClips = UltraVoicePlugin.LoadClips("Swordsmachine.Mel.sm_Spawn{0}.wav", 7);
             EnrageClips = UltraVoicePlugin.LoadClips("Swordsmachine.Mel.sm_Enrage{0}.wav", 4);
             KnockdownClips = UltraVoicePlugin.LoadClips("Swordsmachine.Mel.sm_Knockdown{0}.wav", 3);
-            RangedClips = UltraVoicePlugin.LoadClips("Swordsmachine.Mel.sm_Ranged{0}.wav", 2);
+            RangedClips = UltraVoicePlugin.LoadClips("Swordsmachine.Mel.sm_Ranged{0}.wav", 2);*/
 
             IntroClipNoto = UltraVoicePlugin.LoadClip("Swordsmachine.Noto.sm_SpawnSpecial.wav");
             IntroClipSoil = UltraVoicePlugin.LoadClip("Swordsmachine.Soil.sm_SpawnSpecial.wav");
