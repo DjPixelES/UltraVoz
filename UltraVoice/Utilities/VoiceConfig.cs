@@ -70,7 +70,7 @@ namespace UltraVoice.Utilities
             ConfigPanel enemies = CreatePanel(toggles, "enemytoggles", "Enemy Toggles");
             UltraVoicePlugin.EnemyTogglesPanel = enemies;
 
-            UltraVoicePlugin.CerberusVoiceEnabled = CreateEnemyToggle("cerberusvoice", "Cerberus", true, enemies);
+            /*UltraVoicePlugin.CerberusVoiceEnabled = CreateEnemyToggle("cerberusvoice", "Cerberus", true, enemies);
             UltraVoicePlugin.DeathcatcherVoiceEnabled = CreateEnemyToggle("deathcatchervoice", "Deathcatcher", true, enemies);
             UltraVoicePlugin.EarthmoverVoiceEnabled = CreateEnemyToggle("earthmovervoice", "Earthmover", true, enemies);
             UltraVoicePlugin.FerrymanVoiceEnabled = CreateEnemyToggle("ferrymanvoice", "Ferryman", true, enemies);
@@ -94,11 +94,11 @@ namespace UltraVoice.Utilities
             UltraVoicePlugin.SoldierVoiceEnabled = CreateEnemyToggle("soldiervoice", "Soldier", true, enemies);
             UltraVoicePlugin.StalkerVoiceEnabled = CreateEnemyToggle("stalkervoice", "Stalker", true, enemies);
             UltraVoicePlugin.StrayVoiceEnabled = CreateEnemyToggle("strayvoice", "Stray", true, enemies);
-            UltraVoicePlugin.StreetcleanerVoiceEnabled = CreateEnemyToggle("streetcleanervoice", "Streetcleaner", true, enemies);
+            UltraVoicePlugin.StreetcleanerVoiceEnabled = CreateEnemyToggle("streetcleanervoice", "Streetcleaner", true, enemies);*/
             UltraVoicePlugin.SwordsmachineVoiceEnabled = CreateEnemyToggle("swordsmachinevoice", "Swordsmachine", true, enemies);
-            UltraVoicePlugin.V1VoiceEnabled = CreateEnemyToggle("v1voice", "V1", true, enemies);
+            //UltraVoicePlugin.V1VoiceEnabled = CreateEnemyToggle("v1voice", "V1", true, enemies);
 
-            ConfigPanel v1Lines = CreatePanel(enemies, "v1lines", "V1 Line Categories");
+            /*ConfigPanel v1Lines = CreatePanel(enemies, "v1lines", "V1 Line Categories");
             UltraVoicePlugin.V1LinesPanel = v1Lines;
 
             (string key, string name)[] v1Categories =
@@ -131,7 +131,7 @@ namespace UltraVoice.Utilities
 
             UltraVoicePlugin.V2VoiceEnabled = CreateEnemyToggle("v2voice", "V2", true, enemies);
             UltraVoicePlugin.VirtueVoiceEnabled = CreateEnemyToggle("virtuevoice", "Virtue", true, enemies);
-            UltraVoicePlugin.WickedVoiceEnabled = CreateEnemyToggle("wickedvoice", "Wicked", true, enemies);
+            UltraVoicePlugin.WickedVoiceEnabled = CreateEnemyToggle("wickedvoice", "Wicked", true, enemies);*/
         }
 
         void BuildSubtitleColors()
@@ -145,7 +145,10 @@ namespace UltraVoice.Utilities
 
             (string key, string label)[] subtitleColorCharacters =
             {
-                ("Cerberus", "Cerberus"),
+                ("Swordsmachine", "Swordsmachine") //LINEA ADICIONAL PARA PRUEBAS, COMENTAR SI NO SE USARÁ
+
+                //REFERENCIAS ORIGINALES
+                /*("Cerberus", "Cerberus"),
                 ("Deathcatcher", "Deathcatcher"),
                 ("Ferryman", "Ferryman"),
                 ("Geryon", "Geryon"),
@@ -168,14 +171,19 @@ namespace UltraVoice.Utilities
                 ("V1", "V1"),
                 ("V2", "V2"),
                 ("Virtue", "Virtue"),
-                ("Wicked", "Wicked")
+                ("Wicked", "Wicked")*/
             };
 
             foreach (var (key, label) in subtitleColorCharacters)
                 UltraVoicePlugin.SubtitleColorToggles[key] = CreateSetting($"subcolor_{key.ToLowerInvariant()}", label, true, perCharacter);
         }
 
-        void BuildVoiceActors()
+        void BuildVoiceActors() //PROCEDIMIENTO DE PRUEBA, COMENTAR SI NO SE USARÁ
+        {
+            UltraVoicePlugin.SwordsmachineVoiceActorField = CreateActorSetting("smvoiceactor", "Swordsmachine", UltraVoicePlugin.SwordsmachineVoiceActor.Mel, actors,
+                (UltraVoicePlugin.SwordsmachineVoiceActor.Ender, "Ender"));
+        }
+        /*void BuildVoiceActors()// PROCEDIMIENTO ORIGINAL
         {
             ConfigPanel actors = UltraVoicePlugin.ActorPanel;
 
@@ -256,7 +264,7 @@ namespace UltraVoice.Utilities
             UltraVoicePlugin.VirtueVoiceActorField = CreateActorSetting("virtuevoiceactor", "Virtue", UltraVoicePlugin.VirtueVoiceActor.Noto, actors,
                 (UltraVoicePlugin.VirtueVoiceActor.Noto, "Noto"),
                 (UltraVoicePlugin.VirtueVoiceActor.Virchew, "Virchew"));
-        }
+        }*/
 
         void BuildVolumes()
         {
@@ -269,7 +277,8 @@ namespace UltraVoice.Utilities
 
             (string key, string displayName, BoolField toggle)[] volumeEnemies =
             {
-                ("Cerberus", "Cerberus", UltraVoicePlugin.CerberusVoiceEnabled),
+                ("Swordsmachine", "Swordsmachine", UltraVoicePlugin.SwordsmachineVoiceEnabled),
+                /*("Cerberus", "Cerberus", UltraVoicePlugin.CerberusVoiceEnabled),
                 ("Earthmover", "Earthmover", UltraVoicePlugin.EarthmoverVoiceEnabled),
                 ("Ferryman", "Ferryman", UltraVoicePlugin.FerrymanVoiceEnabled),
                 ("Filth", "Filth", UltraVoicePlugin.FilthVoiceEnabled),
@@ -297,7 +306,7 @@ namespace UltraVoice.Utilities
                 ("V1", "V1", UltraVoicePlugin.V1VoiceEnabled),
                 ("V2", "V2", UltraVoicePlugin.V2VoiceEnabled),
                 ("Virtue", "Virtue", UltraVoicePlugin.VirtueVoiceEnabled),
-                ("Wicked", "Wicked", UltraVoicePlugin.WickedVoiceEnabled)
+                ("Wicked", "Wicked", UltraVoicePlugin.WickedVoiceEnabled)*/
             };
 
             foreach (var (key, displayName, toggle) in volumeEnemies)
