@@ -147,11 +147,8 @@ namespace UltraVoice
             if (string.IsNullOrEmpty(voiceName))
                 return true;
 
-            if (voiceName.StartsWith("EnderGear") || voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
+            if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra"))
                 voiceName = "Swordsmachine";
-
-            /*if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //EL IF ORIGINAL
-                voiceName = "Swordsmachine";*/
 
             foreach (var pair in SubtitleColorToggles)
             {
@@ -375,11 +372,8 @@ namespace UltraVoice
             if (string.IsNullOrEmpty(voiceName))
                 return master;
                 
-            if (voiceName.StartsWith("EnderGear") || voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra")) //IF DE PRUEBA COMENTAR AL DEJAR DE USARLO
+            if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra"))
                 voiceName = "Swordsmachine";
-
-            //if (voiceName.StartsWith("Agony") || voiceName.StartsWith("Tundra"))
-                //voiceName = "Swordsmachine";
 
             float character = 1f;
 
